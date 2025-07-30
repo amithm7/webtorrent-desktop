@@ -63,9 +63,9 @@ jobs:
       with:
         name: macos
         path: |
-          dist/WebTorrent-darwin-arm64/*
-          # dist/*.dmg
-          # dist/*.zip
+          # dist/WebTorrent-darwin-arm64/*
+          dist/*.dmg
+          dist/*.zip
   package_windows:
     if: inputs.package_windows
     runs-on: windows-latest

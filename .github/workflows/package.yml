@@ -44,6 +44,7 @@ jobs:
         name: macos
         path: |
           dist/*.dmg
+          dist/*.app
           dist/*.zip
   package_windows:
     runs-on: windows-latest

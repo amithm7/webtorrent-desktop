@@ -1,3 +1,14 @@
+## Patched
+
+Run unsigned arm64 MacOS app:
+
+```sh
+xattr -r -d com.apple.quarantine ./WebTorrent.app
+```
+
+---
+---
+
 <h1 align="center">
   <br>
   <a href="https://webtorrent.io">

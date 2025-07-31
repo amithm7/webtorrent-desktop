@@ -1,8 +1,25 @@
 name: package
 on: 
   workflow_dispatch:
+    inputs:
+      package_linux:
+        description: package_linux
+        required: true
+        type: boolean
+        default: true
+      package_macos:
+        description: package_macos
+        required: true
+        type: boolean
+        default: true
+      package_windows:
+        description: package_windows
+        required: true
+        type: boolean
+        default: true
 jobs:
   package_linux:
+    if: inputs.package_linux
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -25,6 +42,7 @@ jobs:
           dist/*.rpm
           dist/*.zip
   package_macos:
+    if: inputs.package_macos
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v4
@@ -46,6 +64,7 @@ jobs:
           dist/*.dmg
           dist/*.zip
   package_windows:
+    if: inputs.package_windows
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
